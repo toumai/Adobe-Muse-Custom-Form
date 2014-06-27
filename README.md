@@ -188,7 +188,6 @@ select { color: inherit; color: expression(this.parentNode.currentStyle.color); 
  ```html
 #u193 { display: none; }
 html.js #u193 { display: block; }
-</style>
 ```
 
   - メッセージの切替  
@@ -196,9 +195,14 @@ html.js #u193 { display: block; }
 .noscript { visibility: visible; }
 html.js .noscript { visibility: hidden; }
 ```  
-メッセージはnoscriptクラスは他でも使えるので、マスターに入れたり自分のカスタムcssに入れたりしてもOKです。
+noscriptクラスは他でも使えるので、マスターに入れたり自分のカスタムcssに入れたりしてもOKです。
 
 24.もう一度パブリッシュしてJavaScript OFF時の動作を確認します。
+
+本サンプルの表示確認はこちら
+-----
+
+<http://toumai.businesscatalyst.com/muse-form.html>
 
 最後に
 -----
