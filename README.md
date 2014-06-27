@@ -13,34 +13,60 @@ JavaScriptでradio button, checkbox, select をmuseのformで使えるように�
   
 1.まずはフォームを作ります。ここではシンプルなコンタクト（Simple Contact）を使いました。
 
+![Simple Contact](https://cloud.githubusercontent.com/assets/7941092/3407930/afd96986-fdbc-11e3-9f65-26da71525372.png)
+![Default Form](https://cloud.githubusercontent.com/assets/7941092/3407937/ee32553a-fdbc-11e3-8153-c85a73d6163a.png)
+
 2.お好きにレイアウトしてください。
+
+![Layout](https://cloud.githubusercontent.com/assets/7941092/3407938/ee33c4f6-fdbc-11e3-8437-087c00c09dd3.png)
 
 3.次に追加したい項目を単一行テキスト（Simple Line Text）で追加します。
 
+![Simple Line Text](https://cloud.githubusercontent.com/assets/7941092/3407939/ee34b8f2-fdbc-11e3-8d2d-af611ca57e3d.png)
+
 4.追加した項目にタイトルやレイアウトを設定しておきます。ここまでは普通の手順ですね。
+
+![Set Title and Layout](https://cloud.githubusercontent.com/assets/7941092/3407940/ee3996ba-fdbc-11e3-8c43-53f834f9191e.png)
 
 ### カスタムフィールドに対応するシンプルテキストを作成
 
 5.ここからがポイントです。まずはフォームを選択し、編集を全てに適用（Edit Together）のチェックを外しておきます。
 
+![Uncheck Edit Together](https://cloud.githubusercontent.com/assets/7941092/3407941/ee3cb1a6-fdbc-11e3-810e-a666819ab082.png)
+
+
 6.追加した項目の入力プロンプト（Show Prompt Text When Empty）を解除しておきます。
+
+![Uncheck Show Prompt Text When Empty](https://cloud.githubusercontent.com/assets/7941092/3407942/ee3f9e52-fdbc-11e3-818a-60849a929350.png)
 
 7.入力項目の塗りや線も消しちゃいます。
 
+![Unset Fill and Stroke](https://cloud.githubusercontent.com/assets/7941092/3407943/ee52e566-fdbc-11e3-8d2d-0ba6adfe545f.png)
+
 8.全てのステートで塗や線を消しておいてください。
+
+![Apply All States](https://cloud.githubusercontent.com/assets/7941092/3407944/ee54f540-fdbc-11e3-9470-4f6ca6028e75.png)
 
 9.幅も小さくしておきましょう。
 
+![Set 1px Width](https://cloud.githubusercontent.com/assets/7941092/3407945/ee567528-fdbc-11e3-86cf-89a96dee1675.png)
+
 10.3-9までを繰り返して必要な項目を全て設定します。新しい項目の編集時には直前の編集が一部引き継がれるので結構楽です。
 
+![Image of Cutstom Text Field](https://cloud.githubusercontent.com/assets/7941092/3407946/ee5b7b86-fdbc-11e3-9c4a-48482602408f.png)
+
 11.項目数によっては送信メッセージの位置を移動する必要があるので、これも忘れずに設定しておきましょう。
+
+![Don't Forget Submit Message](https://cloud.githubusercontent.com/assets/7941092/3407947/ee5dfa50-fdbc-11e3-84a2-5da2996e4c87.png)
 
 ### カスタムフィールドを作成
 
 12.ここでようやくカスタム項目を追加します。radio button, checkbox, selectのコードはfieldsetでまとめておきます。
 
+![HTML Code](https://cloud.githubusercontent.com/assets/7941092/3407948/ee630798-fdbc-11e3-89bc-d795d1a68e45.png)
+
   - radio buttonの例  
-```html
+ ```html
 <fieldset data-role="controlgroup" data-type="horizontal">
   <input type="radio" name="radio1" id="radio1_1" value="item1">
   <label for="radio1_1">item1</label>
@@ -52,7 +78,7 @@ JavaScriptでradio button, checkbox, select をmuseのformで使えるように�
 ```
 
   - checkboxの例  
-```html
+ ```html
 <fieldset data-role="controlgroup" data-type="horizontal">
   <input type="checkbox" name="checkbox1" id="checkbox1_1" value="item7">
   <label for="checkbox1_1">item7</label>
@@ -64,7 +90,7 @@ JavaScriptでradio button, checkbox, select をmuseのformで使えるように�
 ```
 
   - selectの例  
-```html
+ ```html
 <fieldset data-role="controlgroup">
   <select name="select1">
     <option value="">Select...</option>
@@ -77,7 +103,11 @@ JavaScriptでradio button, checkbox, select をmuseのformで使えるように�
 
 13.テキストのロールオーバーと合わせるため、入力なし（empty）のステートのテキストカラーに合わせておきます。
 
+![Set Text Color](https://cloud.githubusercontent.com/assets/7941092/3407949/ee72ab26-fdbc-11e3-9075-b089a195f0b1.png)
+
 14.12-13を繰り返して、必要なカスタムフィールドを追加していきます。
+
+![Image of Cutstom Field](https://cloud.githubusercontent.com/assets/7941092/3407950/ee747e88-fdbc-11e3-8b33-982b90b8c1dc.png)
 
 ### マッピング
 
@@ -100,9 +130,9 @@ JavaScriptでradio button, checkbox, select をmuseのformで使えるように�
 })(jQuery);
 </script>
 ```  
-  
-  - ロールオーバー時のテキストカラーも設定します   
-```html
+
+  - ロールオーバー時のテキストカラーも設定します  
+ ```html
 <style type="text/css">
 /*<![CDATA*/
 <!--
@@ -115,8 +145,8 @@ select { color: inherit; color: expression(this.parentNode.currentStyle.color); 
 
 17.ページプロパティでheadに設定します。
 
-  - コードに挿入する場合   
-```html
+  - コードに挿入する場合  
+ ```html
 <script src="scripts/jquery-1.8.3.min.js" type="text/javascript"></script>
 <script type="text/javascript">
   //copy here
@@ -140,27 +170,33 @@ select { color: inherit; color: expression(this.parentNode.currentStyle.color); 
 19.このままではJavaScript OFF時には正常に動作しませんので、対策します。  
 フォームとカスタムフィールドを全て選択しグループ化します。 
 
+![Group](https://cloud.githubusercontent.com/assets/7941092/3407951/ee7c17d8-fdbc-11e3-8be2-8a837a2c8d3e.png)
+
 20.JavaScript OFF用のメッセージをテキストで作成し、段落スタイルでnoscriptとしておきます。
 
+![Noscript class](https://cloud.githubusercontent.com/assets/7941092/3407952/ee7ea52a-fdbc-11e3-88af-9d4dfbcc1ddd.png)
+
 21.20のメッセージはフォームの背面に置きます。 
+
+![Send Backword](https://cloud.githubusercontent.com/assets/7941092/3407953/ee8623b8-fdbc-11e3-8eba-c672d13329b6.png)
 
 22.いったんプレビューし、グループのidを確認します。
 
 23.対策コードをページプロパティのheadに追加します。
 
-  - グループの表示切替（set id of the group）   
-```html
+  - グループの表示切替（set id of the group）  
+ ```html
 #u193 { display: none; }
 html.js #u193 { display: block; }
 </style>
 ```
 
   - メッセージの切替  
-```html
+ ```html
 .noscript { visibility: visible; }
 html.js .noscript { visibility: hidden; }
 ```  
-メッセージはnoscriptクラスは他でも使えるので、マスターに入れたり自分のカスタムcssに入れたりしてもOKです。    
+メッセージはnoscriptクラスは他でも使えるので、マスターに入れたり自分のカスタムcssに入れたりしてもOKです。
 
 24.もう一度パブリッシュしてJavaScript OFF時の動作を確認します。
 
